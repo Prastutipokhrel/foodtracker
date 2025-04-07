@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from .serializers import PlantSerializer
 from .models import Plant
-from rest_framework.permissions import IsAuthenticated   ##from simplejwt we have added this so that authentication is required for all views
+from rest_framework.permissions import IsAuthenticated   # from simplejwt we have added this so that authentication is required for all views
 from rest_framework.response import Response
 from rest_framework import status
 
@@ -9,7 +9,7 @@ from rest_framework import status
 class PlantViewSet(viewsets.ModelViewSet):
     queryset = Plant.objects.all()
     serializer_class = PlantSerializer
-    permission_classes = [IsAuthenticated]   ##Ensure that only authenticated users can access the views
+    permission_classes = [IsAuthenticated]   # Ensure that only authenticated users can access the views
 
     def get_queryset(self):
         user = self.request.user
